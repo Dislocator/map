@@ -12,21 +12,21 @@ namespace map
         {
             
             List<Wall> borders = new List<Wall>();
-            Wall wall1 = new Wall(0, 0, 9, 1);
+            Wall wall1 = new Wall(0, 0, 19, 1);
             borders.Add(wall1);
-            Wall wall2 = new Wall(0, 1, 1, 9);
+            Wall wall2 = new Wall(0, 1, 1, 19);
             borders.Add(wall2);
-            Wall wall3 = new Wall(0, 9, 9, 1);
+            Wall wall3 = new Wall(0, 19, 19, 1);
             borders.Add(wall3);
-            Wall wall4 = new Wall(9, 0, 1, 9);
+            Wall wall4 = new Wall(19, 0, 1, 19);
             borders.Add(wall4);
 
 
             List<Wall> walls = new List<Wall>();
             Wall wall5 = new Wall(1, 1, 4, 1);
             walls.Add(wall5);
-            Wall wall6 = new Wall(1, 1, 1, 4);
-            walls.Add(wall6);
+            //Wall wall6 = new Wall(1, 1, 1, 4);
+            //walls.Add(wall6);
             Wall wall7 = new Wall(1, 5, 1, 4);
             walls.Add(wall7);
             Wall wall8 = new Wall(6, 5, 1, 4);
@@ -58,16 +58,25 @@ namespace map
             Console.ResetColor();
             Console.WriteLine("Map Legend: \n O - Player \n M - Mob \n x - Wall \n $ - Treasure \n E - NextLevel\n");
             
-            for (int y = 0; y < 10; y++)
+            for (int y = 0; y < 20; y++)
             {
                 
 
-                for (int x = 0; x < 10; x++)
+                for (int x = 0; x < 20; x++)
                 {
 
 
                     bool Login = true;
                     foreach (var wall in borders)
+                    {
+                        if (x == wall.WallPosX && y == wall.WallPosY)
+                        {
+                            wall.WallCreate();
+                            Login = false;
+                        }
+
+                    }
+                    foreach (var wall in walls)
                     {
                         if (x == wall.WallPosX && y == wall.WallPosY)
                         {
