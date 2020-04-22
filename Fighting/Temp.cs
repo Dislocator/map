@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Fighting
 {
-    class Temp
+    public class Temp
     {
         public void tempo()
         {

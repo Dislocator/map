@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace map
 {
-    class Wall
+    public class Wall
     {
         public int WallPosX { get; set; }
         public int WallPosY { get; set; }

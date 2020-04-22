@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Fighting
 {
-    class Ability
+    public class Ability
     {
         public int AbbilityId { get; set; }
         public string Name { get; set; }
